@@ -3,7 +3,6 @@
 }
 
 .card {
-  /* display: flex; */
   align-items: center;
   max-height: 300px;
   max-width: 600px;
