@@ -134,3 +134,12 @@ img.weekly-weather {
 span.degree-down {
   font-weight: 300;
 }
+
+.open-code {
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.link {
+  text-decoration: none;
+}
