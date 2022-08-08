@@ -35,10 +35,12 @@
 
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-4 current-temp">
-          <img class="weather-icon" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png">
-          <span id="temperature"></span>
-
+        <div class="col-4 current-temp">
+          <div class="degree">
+            <img class="weather-icon" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png">
+            <span id="temperature"></span>
+            <span id="units">°C|°F</span>
+          </div>
           <ul class="current-weather">
             <li id="sky"></li>
             <li>Precipitation: <span id="precipitation"></span>%</li>

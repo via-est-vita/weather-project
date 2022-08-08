@@ -2,9 +2,9 @@ function watchWeather(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
-  document.querySelector("#temperature").innerHTML = `${Math.round(
+  document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
-  )}°C`;
+  );
   document.querySelector("#sky").innerHTML = response.data.weather[0].main;
   document.querySelector("#precipitation").innerHTML = response.data.clouds.all;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
