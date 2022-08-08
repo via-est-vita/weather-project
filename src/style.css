@@ -107,6 +107,7 @@ input[type="text"] {
   color: grey;
   line-height: 2;
   padding-top: -5px;
+  padding-left: 15px;
 }
 
 .weekly-weather {
