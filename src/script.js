@@ -5,7 +5,8 @@ function watchWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#sky").innerHTML = response.data.weather[0].main;
+  document.querySelector("#sky").innerHTML =
+    response.data.weather[0].description;
   document.querySelector("#precipitation").innerHTML = response.data.clouds.all;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
