@@ -76,19 +76,20 @@ input[type="text"] {
 }
 
 #temperature {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   color: grey;
   position: relative;
   top: 5px;
+  right: 8px;
 }
 
 #units {
-  font-size: 15px;
+  font-size: 14px;
   color: grey;
   position: relative;
-  top: -5px;
-  right: 10px;
+  top: -3px;
+  right: 15px;
 }
 
 .card-body {
@@ -98,8 +99,8 @@ input[type="text"] {
 }
 
 .weather-icon {
-  width: 70px;
-  padding-left: 15px;
+  width: 65px;
+  padding-left: 10px;
 }
 
 .current-weather {
@@ -109,7 +110,7 @@ input[type="text"] {
   color: grey;
   line-height: 2;
   padding-top: -15px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 #sky:first-letter {
