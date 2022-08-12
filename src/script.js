@@ -23,6 +23,9 @@ function watchWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  let icon = document.querySelector(".weather-icon");
+  let imageNumber = response.data.weather[0].icon;
+  icon.setAttribute("src", `./img/${imageNumber}.png.png`);
 }
 
 function showCity(event) {
