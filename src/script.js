@@ -1,3 +1,14 @@
+function currentLocation() {
+  navigator.geolocation.getCurrentPosition(locationInfo);
+}
+
+function locationInfo(position) {
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+  let apiUrlGeoLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=ce0c7105215e5edf62df68b7e027e804`;
+  axios.get(apiUrlGeoLocation).then(watchWeather);
+}
+
 function watchWeather(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
