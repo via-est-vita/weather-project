@@ -80,14 +80,14 @@ input[type="text"] {
   font-weight: 700;
   color: grey;
   position: relative;
-  top: 15px;
+  top: 5px;
 }
 
 #units {
   font-size: 15px;
   color: grey;
   position: relative;
-  top: 5px;
+  top: -5px;
   right: 10px;
 }
 
@@ -98,7 +98,8 @@ input[type="text"] {
 }
 
 .weather-icon {
-  padding-left: 5px;
+  width: 70px;
+  padding-left: 15px;
 }
 
 .current-weather {
@@ -130,7 +131,6 @@ input[type="text"] {
   margin: 0 auto;
 }
 
-/* при изменение картинок на SVG ! не забыть изменить здесь название стиля */
 img.weekly-weather {
   width: 40px;
   display: block;
