@@ -32,88 +32,45 @@
         </div>
       </div>
     </div>
-
     <div class="card-body">
       <div class="row">
-        <div class="col-4 current-temp">
-          <div class="degree">
-            <img class="weather-icon">
-            <span id="temperature"></span>
-            <span id="units">
-              <a href="#" id="celcius-link" class="active">°C</a>|<a href="#" id="fahrenheit-link">°F</a>
-            </span>
+        <div class="col-6">
+          <div class="current-temp">
+            <div class="degree">
+              <img class="weather-icon">
+              <span id="temperature"></span>
+              <span id="units">
+                <a href="#" id="celcius-link" class="active">°C</a>|<a href="#" id="fahrenheit-link">°F</a>
+              </span>
+            </div>
+            <ul class="current-weather">
+              <li id="sky"></li>
+              <li>Precipitation: <span id="precipitation"></span>%</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span>m/s</li>
+            </ul>
           </div>
-          <ul class="current-weather">
-            <li id="sky"></li>
-            <li>Precipitation: <span id="precipitation"></span>%</li>
-            <li>Humidity: <span id="humidity"></span>%</li>
-            <li>Wind: <span id="wind"></span>m/s</li>
-          </ul>
         </div>
-
-        <div class=" col-sm weekly-weather ">
-          <p class="day-of-week">WED</p>
-          <br />
-          <img class="weekly-weather" src="./img/01d.png.png">
-          <br />
-          <p class="temperature-week">
-            30°C
-            <span class="degree-down">16°C</span>
-          </p>
-        </div>
-
-        <div class="col-sm weekly-weather">
-          <p class="day-of-week">THU</p>
-          <br />
-          <img class="weekly-weather" src="./img/02d.png.png">
-          <br />
-          <p class="temperature-week">
-            28°C
-            <span class="degree-down">15°C</span>
-          </p>
-        </div>
-
-        <div class="col-sm weekly-weather">
-          <p class="day-of-week">FRI</p>
-          <br />
-          <img class="weekly-weather" src="./img/01d.png.png">
-          <br />
-          <p class="temperature-week">
-            26°C
-            <span class="degree-down">16°C</span>
-          </p>
-        </div>
-
-        <div class="col-sm weekly-weather">
-          <p class="day-of-week">SAT</p>
-          <br />
-          <img class="weekly-weather" src="./img/02d.png.png">
-          <br />
-          <p class="temperature-week">
-            31°C
-            <span class="degree-down">18°C</span>
-          </p>
-        </div>
-
-        <div class="col-sm weekly-weather">
-          <p class="day-of-week">SUN</p>
-          <br />
-          <img class="weekly-weather" src="./img/01d.png.png">
-          <br />
-          <p class="temperature-week">
-            29°C
-            <span class="degree-down">17°C</span>
-          </p>
+        <div class="weather-forecast" id="forecast">
+          <div class="row">
+            <div class="col-2">
+              <div class="weather-forecast-date">WED</div>
+              <img class="weather-forecast-icon" src="./img/01d.png.png">
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max"> 30° </span>
+                <br />
+                <span class="weather-forecast-temperature-min"> 16° </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div>
-      <p class="open-code">
-        <a href="https://github.com/via-est-vita/weather-project.git" target="_blank">
-          Open-source code
-        </a>
-        by Viktoriia Glebova
-      </p>
+    <div class="open-code">
+      <a href="https://github.com/via-est-vita/weather-project.git" target="_blank">
+        Open-source code
+      </a>
+      by Viktoriia Glebova
     </div>
     <script src="/src/script.js"></script>
 

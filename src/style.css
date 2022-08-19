@@ -1,11 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
 .card {
   align-items: center;
-  max-height: 300px;
-  max-width: 600px;
+  height: 300px;
+  width: 600px;
   margin: 15px auto;
   font-family: "Roboto Mono", monospace;
 }
@@ -99,7 +95,8 @@ input[type="text"] {
 }
 
 .card-body {
-  max-height: 190px;
+  height: 190px;
+  width: 600px;
   border: 1.5px solid grey;
   border-radius: 0px 0px 10px 10px;
 }
@@ -123,12 +120,13 @@ input[type="text"] {
   text-transform: capitalize;
 }
 
-.weekly-weather {
-  margin-right: 10px;
-  line-height: 1.5;
+.weather-forecast {
+  position: relative;
+  top: -155px;
+  right: -190px;
 }
 
-.day-of-week {
+.weather-forecast-date {
   font-size: 14px;
   font-weight: 500;
   color: grey;
@@ -138,20 +136,21 @@ input[type="text"] {
   margin: 0 auto;
 }
 
-img.weekly-weather {
-  width: 40px;
+.weather-forecast-icon {
+  width: 45px;
   display: block;
+  padding: 15px 0px 15px 0px;
   margin: 0 auto;
 }
 
-.temperature-week {
+.weather-forecast-temperatures {
   color: grey;
   text-align: center;
   font-size: 14px;
   font-weight: 500;
 }
 
-span.degree-down {
+.weather-forecast-temperature-min {
   font-weight: 300;
 }
 
