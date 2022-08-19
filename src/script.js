@@ -54,7 +54,7 @@ function showDate() {
   let hours = addZero(todayNow.getHours());
   let minutes = addZero(todayNow.getMinutes());
 
-  return day + " " + hours + ":" + minutes;
+  return `${day} ${hours}:${minutes}`;
 }
 document.getElementById("current-date").innerHTML = showDate();
 
