@@ -9,74 +9,52 @@ function locationInfo(position) {
   axios.get(apiUrlGeoLocation).then(watchWeather);
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    ` 
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        ` 
             <div class="col-2">
-              <div class="weather-forecast-date">WED</div>
-              <img class="weather-forecast-icon" src="./img/01d.png.png" />
+              <div class="weather-forecast-date">${formatDay(
+                forecastDay.dt
+              )}</div>
+              <img class="weather-forecast-icon" src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" />
               <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-temperature-max"> 30° </span>
+                <span class="weather-forecast-temperature-max"> ${Math.round(
+                  forecastDay.temp.max
+                )}° </span>
                 <br />
-                <span class="weather-forecast-temperature-min"> 16° </span>
+                <span class="weather-forecast-temperature-min"> ${Math.round(
+                  forecastDay.temp.min
+                )}° </span>
               </div>
             </div>
           `;
-          
-          forecastHTML = forecastHTML + `</div>`;
-          forecastElement.innerHTML = forecastHTML;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-
-// function formatDay(timestamp) {
-//   let date = new Date(timestamp * 1000);
-//   let day = date.getDay();
-//   let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-//   return days[day];
-// }
-// function displayForecast(response) {
-//   let forecast = response.data.daily;
-//   let forecastElement = document.querySelector("#forecast");
-//   let forecastHTML = `<div class="row">`;
-
-//   forecast.forEach(function (forecastDay, index) {
-//     if (index < 4) {
-//       forecastHTML =
-//         forecastHTML +
-//         `
-//             <div class="col-2">
-//               <div class="weather-forecast-date">${formatDay(
-//                 forecastDay.dt
-//               )}</div>
-
-//               // <img class="weather-forecast-icon"
-//               // src="./img/01d.png.png" />
-
-//               <div class="weather-forecast-temperatures">
-//                 <span class="weather-forecast-temperature-max"> ${Math.round(
-//                   forecastDay.temp.max
-//                 )}° </span>
-//                 <br />
-//                 <span class="weather-forecast-temperature-min"> ${Math.round(
-//                   forecastDay.temp.min
-//                 )}° </span>
-//               </div>
-//             </div>
-//         `;
-//     }
-//   });
-
-//   forecastHTML = forecastHTML + `</div>`;
-//   forecastElement.innerHTML = forecastHTML;
-// }
-
-// function getForecast(coordinates) {
-//   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}}&units=metric&appid=ce0c7105215e5edf62df68b7e027e804`;
-//   axios.get(apiUrl).then(displayForecast);
-// }
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=ce0c7105215e5edf62df68b7e027e804`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function watchWeather(response) {
   console.log(response.data);
@@ -99,7 +77,7 @@ function watchWeather(response) {
   let imageNumber = response.data.weather[0].icon;
   icon.setAttribute("src", `./img/${imageNumber}.png.png`);
 
-  // getForecast(response.data.coord);
+  getForecast(response.data.coord);
 }
 
 function showDate() {
@@ -163,5 +141,3 @@ convertUnitF.addEventListener("click", changeFahrenheit);
 
 let convertUnitC = document.querySelector("#celcius-link");
 convertUnitC.addEventListener("click", changeCelcius);
-
-displayForecast();
