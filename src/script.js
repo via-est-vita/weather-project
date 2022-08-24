@@ -131,8 +131,8 @@ function changeCelcius(event) {
   convertUnits.innerHTML = Math.round(celciusTemp);
 }
 
-let search = document.querySelector(".button");
-search.addEventListener("click", showCity);
+let search = document.querySelector(".searchBar");
+search.addEventListener("submit", showCity);
 
 let celciusTemp = null;
 

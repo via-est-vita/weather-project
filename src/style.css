@@ -57,18 +57,13 @@ input[type="text"] {
   outline-style: none;
 }
 
-.button {
+.search-icon {
   color: grey;
   font-size: 18px;
   width: 20px;
   position: relative;
   top: -27px;
   left: 223px;
-  cursor: pointer;
-}
-
-.button:hover {
-  color: dimgray;
 }
 
 #temperature {
